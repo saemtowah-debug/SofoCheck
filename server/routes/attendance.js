@@ -27,18 +27,18 @@ export async function attendanceRoutes(fastify, options) {
         const memberId = request.user.id;
         const db = getDb();
 
-        // TEST_MODE: Skip location requirement for testing
+        // Geolocation check - disabled by default for overrides, toggleable via ENABLE_GEOLOCATION
+        const ENABLE_GEOLOCATION = process.env.ENABLE_GEOLOCATION === 'true';
         const TEST_MODE = process.env.TEST_MODE === 'true';
 
-        if (!TEST_MODE && (latitude === undefined || longitude === undefined)) {
+        if (ENABLE_GEOLOCATION && (latitude === undefined || longitude === undefined)) {
             return reply.status(400).send({
                 error: 'Location required',
                 message: 'Please enable location services to mark attendance'
             });
         }
 
-        // TEST_MODE: Skip geolocation check
-        if (!TEST_MODE) {
+        if (ENABLE_GEOLOCATION) {
             const geoCheck = isWithinChurchGeofence(latitude, longitude);
             if (!geoCheck.isWithin) {
                 return reply.status(403).send({
