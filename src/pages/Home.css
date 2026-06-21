@@ -1,0 +1,420 @@
+.home-page {
+    min-height: 100vh;
+    background: var(--gradient-heavenly);
+    position: relative;
+}
+
+.home-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 300px;
+    background: var(--gradient-radiance);
+    pointer-events: none;
+}
+
+/* Header */
+.home-header {
+    padding: var(--space-lg) var(--space-xl);
+    background: var(--heavenly-white);
+    box-shadow: var(--shadow-soft);
+    position: relative;
+    z-index: 10;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.brand .logo-icon {
+    font-size: 1.75rem;
+    color: var(--golden-light);
+}
+
+.brand-name {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--royal-purple);
+}
+
+.header-actions {
+    display: flex;
+    gap: var(--space-sm);
+}
+
+/* Main Content */
+.home-main {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: var(--space-2xl) var(--space-lg);
+    position: relative;
+    z-index: 5;
+}
+
+/* Welcome Section */
+.welcome-section {
+    text-align: center;
+    margin-bottom: var(--space-2xl);
+}
+
+.welcome-section h1 {
+    font-size: 1.75rem;
+    margin-bottom: var(--space-md);
+}
+
+.welcome-badges {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+}
+
+.milestone-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-md);
+    background: linear-gradient(135deg, var(--royal-purple-light), var(--royal-purple));
+    border-radius: var(--radius-full);
+    color: var(--heavenly-white);
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+/* Birthday Banner */
+.birthday-banner {
+    background: linear-gradient(135deg, #FFE4B5, #FFD700);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    margin-bottom: var(--space-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    box-shadow: var(--shadow-golden);
+}
+
+.birthday-icon {
+    font-size: 2.5rem;
+}
+
+.birthday-text {
+    flex: 1;
+}
+
+.birthday-text strong {
+    display: block;
+    font-size: 1.125rem;
+    color: var(--royal-purple-dark);
+    margin-bottom: var(--space-xs);
+}
+
+.birthday-text p {
+    margin: 0;
+    color: var(--royal-purple);
+    font-size: 0.875rem;
+}
+
+/* Milestone Progress Card */
+.milestone-progress-card {
+    background: var(--heavenly-white);
+    border-radius: var(--radius-md);
+    padding: var(--space-md) var(--space-lg);
+    margin-bottom: var(--space-lg);
+    box-shadow: var(--shadow-soft);
+}
+
+.milestone-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-sm);
+    font-size: 0.875rem;
+}
+
+.milestone-header span:first-child {
+    color: var(--royal-purple);
+    font-weight: 500;
+}
+
+.milestone-count {
+    color: var(--blessed-blue);
+    font-weight: 600;
+}
+
+.progress-bar {
+    height: 8px;
+    background: rgba(74, 14, 92, 0.1);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--gradient-golden);
+    border-radius: var(--radius-full);
+    transition: width 0.5s ease;
+}
+
+/* Birthdays Section */
+.birthdays-section {
+    background: var(--heavenly-white);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    margin-bottom: var(--space-lg);
+    box-shadow: var(--shadow-soft);
+}
+
+.birthdays-section h3 {
+    font-size: 1rem;
+    margin-bottom: var(--space-md);
+    color: var(--royal-purple);
+}
+
+.birthdays-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.birthday-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-sm) var(--space-md);
+    background: var(--soft-ivory);
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-fast);
+}
+
+.birthday-item.today {
+    background: linear-gradient(135deg, #FFF8E7, #FFE4B5);
+    border: 1px solid var(--golden-light);
+}
+
+.birthday-name {
+    font-weight: 500;
+    color: var(--deep-charcoal);
+}
+
+.birthday-date {
+    font-size: 0.875rem;
+    color: var(--blessed-blue);
+}
+
+/* Attendance Card */
+.attendance-card {
+    background: var(--heavenly-white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-2xl);
+    box-shadow: var(--shadow-elevated);
+    text-align: center;
+    margin-bottom: var(--space-xl);
+}
+
+.attendance-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: var(--space-sm);
+}
+
+.session-time {
+    color: var(--blessed-blue);
+    font-size: 1.125rem;
+    margin-bottom: var(--space-xl);
+}
+
+.attendance-button {
+    font-size: 1.25rem;
+    padding: var(--space-lg) var(--space-2xl);
+    min-width: 250px;
+}
+
+.location-status {
+    margin-top: var(--space-md);
+    color: var(--success-green);
+    font-size: 0.875rem;
+}
+
+/* Location Error */
+.location-error {
+    padding: var(--space-lg);
+    background: rgba(198, 40, 40, 0.05);
+    border-radius: var(--radius-sm);
+    color: var(--error-red);
+}
+
+.location-error svg {
+    width: 40px;
+    height: 40px;
+    margin-bottom: var(--space-md);
+    opacity: 0.7;
+}
+
+.location-error p {
+    margin-bottom: var(--space-md);
+}
+
+/* Loading State */
+.loading-state {
+    padding: var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--soft-ivory);
+    border-top-color: var(--royal-purple);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Not Available State */
+.not-available {
+    padding: var(--space-lg);
+}
+
+.not-available h3 {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-sm);
+}
+
+.not-available p {
+    color: var(--deep-charcoal);
+    opacity: 0.8;
+}
+
+.already-checked {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-md);
+    color: var(--success-green);
+    margin-bottom: var(--space-md);
+}
+
+.already-checked svg {
+    width: 32px;
+    height: 32px;
+}
+
+.already-checked h3 {
+    color: var(--success-green);
+    margin: 0;
+}
+
+/* Quick Links */
+.quick-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+}
+
+.quick-link-card {
+    background: var(--heavenly-white);
+    border: none;
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    box-shadow: var(--shadow-soft);
+}
+
+.quick-link-card:hover {
+    box-shadow: var(--shadow-medium);
+    transform: translateY(-2px);
+}
+
+.quick-link-card svg {
+    width: 28px;
+    height: 28px;
+    color: var(--royal-purple);
+}
+
+.quick-link-card span {
+    font-size: 0.875rem;
+    color: var(--deep-charcoal);
+    font-weight: 500;
+}
+
+/* Success Page */
+.success-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-xl);
+}
+
+.success-container {
+    text-align: center;
+    max-width: 400px;
+}
+
+.success-container h1 {
+    font-size: 1.75rem;
+    margin: var(--space-xl) 0 var(--space-sm);
+}
+
+.success-time {
+    color: var(--blessed-blue);
+    margin-bottom: var(--space-xl);
+}
+
+.success-container .btn {
+    margin-top: var(--space-lg);
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+    .header-content {
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+
+    .header-actions {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .home-main {
+        padding: var(--space-lg) var(--space-md);
+    }
+
+    .attendance-card {
+        padding: var(--space-lg);
+    }
+
+    .attendance-button {
+        width: 100%;
+        min-width: auto;
+    }
+
+    .quick-links {
+        grid-template-columns: 1fr;
+    }
+}
