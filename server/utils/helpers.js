@@ -1,9 +1,9 @@
 // Church coordinates: PIWC Dansoman
 // 5.5539° N, 0.2974° W
 export const CHURCH_LOCATION = {
-    latitude: 5.5539,
-    longitude: -0.2974, // West is negative
-    radiusMeters: 100 // 100 meter radius
+    latitude: parseFloat(process.env.CHURCH_LATITUDE) || 5.5539,
+    longitude: parseFloat(process.env.CHURCH_LONGITUDE) || -0.2974, // West is negative
+    radiusMeters: parseInt(process.env.CHURCH_RADIUS_METERS, 10) || 300 // 300 meter radius (increased from 100 to handle indoor GPS drift)
 };
 
 /**
